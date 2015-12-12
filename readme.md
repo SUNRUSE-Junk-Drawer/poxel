@@ -60,16 +60,15 @@ Returns null if the block is not enclosed.
 
 ## Manipulation
 
-### setMaterial
+### cut
 
 Given:
 
 - The object inside a layer containing materials as keys and arrays of arrays specifying quadrilaterals as values.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
-- A string specifying a material, or null.
 
-Modifies the quadrilateral arrays to change the material of the quadrilateral at the specified location to the specified material, or make a hole when the material is null.
+Modifies the quadrilateral arrays to make a 1x1 hole at the specified location.
 This may change the surrounding quadrilaterals, splitting but not merging them as required to produce the requested topology.
 Returns truthy if any changes were made, and falsy if not.
 
@@ -77,7 +76,7 @@ Returns truthy if any changes were made, and falsy if not.
 
 Given:
 
-- The object inside a layer containing materials as keys and arrays of arrays specifying quadrilaterals as values.
+- The array of arrays specifying quadrilaterals inside a material inside a layer.
 
 Modifies the quadrilateral arrays to merge any eligible quadrilaterals into fewer, larger quadrilaterals.
 Returns truthy if any changes were made, and falsy if not.
