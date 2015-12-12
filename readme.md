@@ -56,7 +56,7 @@ Given:
 
 Returns truthy when the quadrilateral described covers the specified location.
 
-### anyQuadrilateralCovers
+### quadrilateralsCover
 
 Given:
 
