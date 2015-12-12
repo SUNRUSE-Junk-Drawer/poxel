@@ -94,7 +94,7 @@ Returns null if the block is not enclosed.
 
 Given:
 
-- The object inside a layer containing materials as keys and arrays of arrays specifying quadrilaterals as values.
+- An array of arrays of arrays of integers specifying the areas quadrilaterals in a layer cover.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
 
