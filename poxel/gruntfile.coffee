@@ -47,6 +47,9 @@ module.exports = (grunt) ->
 			unit:
 				options:
 					specNameSuffix: ".unit.js"
+					reporters:
+						console:
+							verbosity: 2
 				specs: "build/**/*.unit.js"				
 
 	grunt.registerTask "test", ["preBuild", "jasmine_nodejs", "clean:build"]
