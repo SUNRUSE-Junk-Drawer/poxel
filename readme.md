@@ -87,11 +87,9 @@ Returns truthy if any changes were made, and falsy if not.
 
 Given:
 
-- The name of the property vertices are being generated for, i.e. "xn" or "yp".
-- The location of the plane the quadrilaterals exist on, as an integer or string.
 - The array of arrays specifying the quadrilaterals on that plane.
 
-Returns integers specifying the vertices of the quadrilaterals on the X, Y and Z axes, flattened into a single array.  (interleaved; XYZXYZXYZ)
+Returns integers specifying the vertices of the quadrilaterals on the X and Y axes, flattened into a single array.  (interleaved; XYXYXYXY)
 These run in the order NN, NP, PP, PN; clock-wise, starting from the point closest to negative infinity on both axes.
 
 ### generateIndices
