@@ -46,6 +46,36 @@ The export of this package is an object with the following functions as properti
 
 ## Querying
 
+### quadrilateralCovers
+
+Given:
+
+- An array of arrays of integers specifying the area a quadrilateral covers in 2D space.
+- An integer specifying a location on the first axis.
+- An integer specifying a location on the second axis.
+
+Returns truthy when the quadrilateral described covers the specified location.
+
+### anyQuadrilateralCovers
+
+Given:
+
+- An array of arrays of arrays of integers specifying the areas quadrilaterals in a layer cover.
+- An integer specifying a location on the first axis.
+- An integer specifying a location on the second axis.
+
+Returns truthy when any quadrilateral described in the layer covers the specified location.
+
+### materialCovering
+
+Given:
+
+- The object inside a layer containing materials as keys and arrays of arrays specifying quadrilaterals as values.
+- An integer specifying a location on the first axis.
+- An integer specifying a location on the second axis.
+
+Returns the material covering the specified location, if any, else, null.
+
 ### getBlock
 
 Given:
