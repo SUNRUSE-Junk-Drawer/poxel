@@ -3,3 +3,4 @@ module.exports =
 	generateVertices: require "./generateVertices"
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
+	quadrilateralsCover: require "./quadrilateralsCover"
