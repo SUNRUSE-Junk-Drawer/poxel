@@ -2,6 +2,7 @@ describe "index", ->
 	index = require "./index"
 	it "imports cutQuadrilateralSet", -> expect(index.cutQuadrilateralSet).toBe require "./cutQuadrilateralSet"
 	it "imports cutLayer", -> expect(index.cutLayer).toBe require "./cutLayer"
+	it "imports cutTerrain", -> expect(index.cutTerrain).toBe require "./cutTerrain"
 	it "imports generateVertices", -> expect(index.generateVertices).toBe require "./generateVertices"
 	it "imports generateIndices", -> expect(index.generateIndices).toBe require "./generateIndices"
 	it "imports quadrilateralCovers", -> expect(index.quadrilateralCovers).toBe require "./quadrilateralCovers"

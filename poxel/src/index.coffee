@@ -1,6 +1,7 @@
 module.exports = 
 	cutQuadrilateralSet: require "./cutQuadrilateralSet"
 	cutLayer: require "./cutLayer"
+	cutTerrain: require "./cutTerrain"
 	generateVertices: require "./generateVertices"
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
