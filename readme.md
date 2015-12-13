@@ -90,6 +90,38 @@ Returns null if the block is not enclosed.
 
 ## Manipulation
 
+### subtractBlock
+
+Given:
+
+- A terrain object.
+- An integer specifying a location on the X axis.
+- An integer specifying a location on the Y axis.
+- An integer specifying a location on the Z axis.
+- A string specifing a material.
+
+Manipulates the terrain object to cut a 1x1x1 block out of it at the specified location.
+This works on the following rules:
+
+- Any outwards facing quadrilaterals on the block are erased.
+- Anywhere an outwards facing quadrilateral was not erased has an inwards facing quadrilateral added.
+
+### addBlock
+
+Given:
+
+- A terrain object.
+- An integer specifying a location on the X axis.
+- An integer specifying a location on the Y axis.
+- An integer specifying a location on the Z axis.
+- A string specifing a material.
+
+Manipulates the terrain object to add a 1x1x1 block to it at the specified location.
+This works on the following rules:
+
+- Any inwards facing quadrilaterals on the block are erased.
+- Anywhere an inwards facing quadrilateral was not erased has an outwards facing quadrilateral added.
+
 ### cut
 
 Given:
