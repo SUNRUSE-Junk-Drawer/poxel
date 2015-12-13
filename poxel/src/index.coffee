@@ -7,4 +7,6 @@ module.exports =
 	quadrilateralCovers: require "./quadrilateralCovers"
 	quadrilateralSetCovers: require "./quadrilateralSetCovers"
 	materialConveringInLayer: require "./materialConveringInLayer"
+	addBlock: require "./addBlock"
+	subtractBlock: require "./subtractBlock"
 	add: require "./add"

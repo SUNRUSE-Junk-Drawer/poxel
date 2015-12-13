@@ -9,3 +9,5 @@ describe "index", ->
 	it "imports quadrilateralSetCovers", -> expect(index.quadrilateralSetCovers).toBe require "./quadrilateralSetCovers"
 	it "imports materialConveringInLayer", -> expect(index.materialConveringInLayer).toBe require "./materialConveringInLayer"
 	it "imports add", -> expect(index.add).toBe require "./add"
+	it "imports addBlock", -> expect(index.addBlock).toBe require "./addBlock"
+	it "imports subtractBlock", -> expect(index.subtractBlock).toBe require "./subtractBlock"
