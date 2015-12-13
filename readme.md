@@ -122,6 +122,18 @@ Modifies the quadrilateral arrays to make a 1x1 hole at the specified location.
 This may change the surrounding quadrilaterals, splitting but not merging them as required to produce the requested topology.
 Returns truthy if any changes were made, and falsy if not.
 
+### cutLayer
+
+Given:
+
+- A layer.
+- An integer specifying a location on the first axis.
+- An integer specifying a location on the second axis.
+
+Modifies the quadrilateral arrays in the materials of the layer to make a 1x1 hole at the specified location.
+This may change the surrounding quadrilaterals, splitting but not merging them as required to produce the requested topology.
+Returns truthy if any changes were made, and falsy if not.
+
 ### add
 
 Given:
