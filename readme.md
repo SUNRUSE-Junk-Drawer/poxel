@@ -14,13 +14,13 @@ And the following disadvantages:
 
 # Data structure
 
-    {
-		"xn": {
-			"5": {
-				"dirt": [[
-					[20, 24],
-					[30, 40]
-				]]
+    {											<-- Terrain
+		"xn": {									<-- Facing direction.  (X/Y/Z Negative/Positive)
+			"5": {								<-- Layer
+				"dirt": 						<-- Material
+				[								<-- Quadrilateral Set
+					[[20, 24], [30, 40]]		<-- Quadrilateral
+				]
 			}
 		},
 		"zp": {
@@ -50,7 +50,7 @@ The export of this package is an object with the following functions as properti
 
 Given:
 
-- An array of arrays of integers specifying the area a quadrilateral covers in 2D space.
+- A quadrilateral.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
 
@@ -60,7 +60,7 @@ Returns truthy when the quadrilateral described covers the specified location.
 
 Given:
 
-- An array of arrays of arrays of integers specifying the areas quadrilaterals in a layer cover.
+- A quadrilateral set.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
 
@@ -70,7 +70,7 @@ Returns truthy when any quadrilateral described in the layer covers the specifie
 
 Given:
 
-- The object inside a layer containing materials as keys and arrays of arrays specifying quadrilaterals as values.
+- A layer.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
 
@@ -82,7 +82,7 @@ Returns the material covering the specified location, if any, else, null.
 
 Given:
 
-- A terrain object.
+- A terrain.
 - An integer specifying a location on the X axis.
 - An integer specifying a location on the Y axis.
 - An integer specifying a location on the Z axis.
@@ -98,7 +98,7 @@ This works on the following rules:
 
 Given:
 
-- A terrain object.
+- A terrain.
 - An integer specifying a location on the X axis.
 - An integer specifying a location on the Y axis.
 - An integer specifying a location on the Z axis.
@@ -114,7 +114,7 @@ This works on the following rules:
 
 Given:
 
-- An array of arrays of arrays of integers specifying the areas quadrilaterals in a layer cover.
+- A quadrilateral set.
 - An integer specifying a location on the first axis.
 - An integer specifying a location on the second axis.
 
@@ -126,7 +126,7 @@ Returns truthy if any changes were made, and falsy if not.
 
 Given:
 
-- The array of arrays specifying quadrilaterals inside a material inside a layer.
+- A quadrilateral set.
 
 Modifies the quadrilateral arrays to merge any eligible quadrilaterals into fewer, larger quadrilaterals.
 Returns truthy if any changes were made, and falsy if not.
@@ -137,7 +137,7 @@ Returns truthy if any changes were made, and falsy if not.
 
 Given:
 
-- The array of arrays specifying the quadrilaterals on that plane.
+- A quadrilateral set.
 
 Returns integers specifying the vertices of the quadrilaterals on the X and Y axes, flattened into a single array.  (interleaved; XYXYXYXY)
 These run in the order NN, NP, PP, PN; clock-wise, starting from the point closest to negative infinity on both axes.
