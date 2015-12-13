@@ -56,7 +56,7 @@ Given:
 
 Returns truthy when the quadrilateral described covers the specified location.
 
-### quadrilateralsCover
+### quadrilateralSetCovers
 
 Given:
 
@@ -66,7 +66,7 @@ Given:
 
 Returns truthy when any quadrilateral described in the layer covers the specified location.
 
-### materialCovering
+### materialConveringInLayer
 
 Given:
 

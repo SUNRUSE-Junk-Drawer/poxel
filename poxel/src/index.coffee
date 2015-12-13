@@ -3,6 +3,6 @@ module.exports =
 	generateVertices: require "./generateVertices"
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
-	quadrilateralsCover: require "./quadrilateralsCover"
-	materialCovering: require "./materialCovering"
+	quadrilateralSetCovers: require "./quadrilateralSetCovers"
+	materialConveringInLayer: require "./materialConveringInLayer"
 	add: require "./add"
