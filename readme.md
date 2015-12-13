@@ -76,18 +76,6 @@ Given:
 
 Returns the material covering the specified location, if any, else, null.
 
-### getBlock
-
-Given:
-
-- A terrain object.
-- An integer specifying a location on the X axis.
-- An integer specifying a location on the Y axis.
-- An integer specifying a location on the Z axis.
-
-Attempts to figure out which material is in the specified location, based upon the nearest enclosing quadrilateral.
-Returns null if the block is not enclosed.
-
 ## Manipulation
 
 ### subtractBlock
