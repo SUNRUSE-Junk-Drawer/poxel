@@ -6,3 +6,4 @@ describe "index", ->
 	it "imports quadrilateralCovers", -> expect(index.quadrilateralCovers).toBe require "./quadrilateralCovers"
 	it "imports quadrilateralsCover", -> expect(index.quadrilateralsCover).toBe require "./quadrilateralsCover"
 	it "imports materialCovering", -> expect(index.materialCovering).toBe require "./materialCovering"
+	it "imports subtractBlock", -> expect(index.subtractBlock).toBe require "./subtractBlock"

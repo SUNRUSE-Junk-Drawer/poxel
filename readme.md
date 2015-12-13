@@ -122,6 +122,30 @@ Modifies the quadrilateral arrays to make a 1x1 hole at the specified location.
 This may change the surrounding quadrilaterals, splitting but not merging them as required to produce the requested topology.
 Returns truthy if any changes were made, and falsy if not.
 
+### add
+
+Given:
+
+- A terrain.
+- A string specifying a facing direction.  (xp, zn, etc.)
+- An integer specifying a layer.
+- A string specifying a material.
+- An integer specifying a start location on the first axis.
+- An integer specifying a end location on the first axis.
+- An integer specifying a start location on the second axis.
+- An integer specifying a end location on the second axis.
+
+Adds a new quadrilateral covering the specified area in the specified layer, of the specified material.
+Does not check that the space is empty.
+
+If:
+
+- The facing direction has not been defined for the terrain.
+- The layer has not been defined for the facing direction.
+- The material has not been defined for the layer.
+
+These are automatically defined.
+
 ### optimise
 
 Given:
