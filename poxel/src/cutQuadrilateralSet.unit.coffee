@@ -1,5 +1,5 @@
-describe "cut", ->
-	cut = require "./cut"
+describe "cutQuadrilateralSet", ->
+	cutQuadrilateralSet = require "./cutQuadrilateralSet"
 
 	generateMapData = (input) -> 
 		for y in [-15..15]
@@ -50,7 +50,7 @@ describe "cut", ->
 							[[-10, -6], [-7, -2]]
 						]
 						mutated = JSON.parse JSON.stringify input
-						output = cut mutated, cutX, cutY
+						output = cutQuadrilateralSet mutated, cutX, cutY
 					it "does not create degenerate quadrilaterals", ->
 						for quadrilateral in mutated
 							expect(quadrilateral[0][0] <= quadrilateral[0][1]).toBeTruthy "A quadrilateral was degenerate on X " + JSON.stringify quadrilateral

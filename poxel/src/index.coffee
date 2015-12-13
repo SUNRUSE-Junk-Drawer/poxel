@@ -1,5 +1,5 @@
 module.exports = 
-	cut: require "./cut"
+	cutQuadrilateralSet: require "./cutQuadrilateralSet"
 	generateVertices: require "./generateVertices"
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
