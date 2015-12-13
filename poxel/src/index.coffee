@@ -4,3 +4,4 @@ module.exports =
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
 	quadrilateralsCover: require "./quadrilateralsCover"
+	materialCovering: require "./materialCovering"
