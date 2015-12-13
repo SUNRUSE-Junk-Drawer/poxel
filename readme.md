@@ -110,7 +110,7 @@ This works on the following rules:
 - Any inwards facing quadrilaterals on the block are erased.
 - Anywhere an inwards facing quadrilateral was not erased has an outwards facing quadrilateral added.
 
-### cut
+### cutQuadrilateralSet
 
 Given:
 
