@@ -5,4 +5,4 @@ module.exports =
 	quadrilateralCovers: require "./quadrilateralCovers"
 	quadrilateralsCover: require "./quadrilateralsCover"
 	materialCovering: require "./materialCovering"
-	subtractBlock: require "./subtractBlock"
+	add: require "./add"
