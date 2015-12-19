@@ -76,6 +76,30 @@ Given:
 
 Returns the material covering the specified location, if any, else, null.
 
+### blockOnSurface
+
+Given:
+
+- A terrain.
+- An integer specifying a location on the X axis.
+- An integer specifying a location on the Y axis.
+- An integer specifying a location on the Z axis.
+
+Returns truthy if any faces point into the specified block location.
+If so, it is valid to add a block.
+
+### blockInSurface
+
+Given:
+
+- A terrain.
+- An integer specifying a location on the X axis.
+- An integer specifying a location on the Y axis.
+- An integer specifying a location on the Z axis.
+
+Returns truthy if any faces out of the specified block location.
+If so, it is valid to subtract a block.
+
 ## Manipulation
 
 ### subtractBlock
