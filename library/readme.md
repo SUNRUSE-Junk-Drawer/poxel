@@ -65,11 +65,11 @@ Please note that only the lower bound is inclusive, so [0, 1] fills the gap betw
 
 When imported into Blender, this shows the model:
 
-![Textured model](docs/textured.png)
+![Textured model](https://github.com/jameswilddev/poxel/raw/master/library/docs/textured.png)
 
 Topology has also been optimised to merge repeated faces:
 
-![Topology of model](docs/topology.png)
+![Topology of model](https://github.com/jameswilddev/poxel/raw/master/library/docs/topology.png)
 
 # Functions
 
