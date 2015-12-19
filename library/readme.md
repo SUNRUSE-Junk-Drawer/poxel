@@ -232,7 +232,7 @@ If:
 
 These are automatically defined.
 
-### optimise (currently unimplemented)
+### optimiseQuadrilateralSet
 
 Given:
 
