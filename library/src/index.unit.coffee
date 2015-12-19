@@ -7,7 +7,7 @@ describe "index", ->
 	it "imports generateIndices", -> expect(index.generateIndices).toBe require "./generateIndices"
 	it "imports quadrilateralCovers", -> expect(index.quadrilateralCovers).toBe require "./quadrilateralCovers"
 	it "imports quadrilateralSetCovers", -> expect(index.quadrilateralSetCovers).toBe require "./quadrilateralSetCovers"
-	it "imports materialConveringInLayer", -> expect(index.materialConveringInLayer).toBe require "./materialConveringInLayer"
+	it "imports materialCoveringInLayer", -> expect(index.materialCoveringInLayer).toBe require "./materialCoveringInLayer"
 	it "imports add", -> expect(index.add).toBe require "./add"
 	it "imports addBlock", -> expect(index.addBlock).toBe require "./addBlock"
 	it "imports subtractBlock", -> expect(index.subtractBlock).toBe require "./subtractBlock"

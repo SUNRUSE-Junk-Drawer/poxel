@@ -1,4 +1,4 @@
-materialCoveringInLayer = require "./materialConveringInLayer"
+materialCoveringInLayer = require "./materialCoveringInLayer"
 
 module.exports = (terrain, x, y, z) ->
 	if terrain.xn and terrain.xn[x + 1] and materialCoveringInLayer terrain.xn[x + 1], y, z then return true

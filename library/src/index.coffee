@@ -6,7 +6,7 @@ module.exports =
 	generateIndices: require "./generateIndices"
 	quadrilateralCovers: require "./quadrilateralCovers"
 	quadrilateralSetCovers: require "./quadrilateralSetCovers"
-	materialConveringInLayer: require "./materialConveringInLayer"
+	materialCoveringInLayer: require "./materialCoveringInLayer"
 	addBlock: require "./addBlock"
 	subtractBlock: require "./subtractBlock"
 	add: require "./add"
