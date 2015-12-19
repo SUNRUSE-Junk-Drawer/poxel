@@ -1,0 +1,45 @@
+{
+  "name": "poxel-server",
+  "version": "0.0.0",
+  "description": "A socket.io-based multiplayer server for maps based on the \"poxel\" library.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "grunt test",
+    "prepublish": "grunt build",
+	"start": "node dist/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameswilddev/poxel.git"
+  },
+  "keywords": [
+    "voxel",
+    "poxel",
+    "3d",
+    "graphics"
+  ],
+  "author": "jameswilddev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameswilddev/poxel/issues"
+  },
+  "homepage": "https://github.com/jameswilddev/poxel#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-nodejs": "^1.4.3",
+    "jsonschema": "^1.0.2",
+    "rewire": "^2.5.1",
+    "socket.io": "^1.3.7"
+  },
+  "dependencies": {
+    "poxel": "0.0.8"
+  }
+}
