@@ -35,7 +35,7 @@
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jasmine-nodejs": "^1.4.3",
-    "rewire": "^2.5.1",
+    "rewire": "^2.5.1"
   },
   "dependencies": {
     "poxel": "0.0.8",
