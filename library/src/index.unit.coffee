@@ -13,3 +13,6 @@ describe "index", ->
 	it "imports subtractBlock", -> expect(index.subtractBlock).toBe require "./subtractBlock"
 	it "imports blockOnSurface", -> expect(index.blockOnSurface).toBe require "./blockOnSurface"
 	it "imports blockInSurface", -> expect(index.blockInSurface).toBe require "./blockInSurface"
+	it "imports optimiseQuadrilateralSet", -> expect(index.optimiseQuadrilateralSet).toBe require "./optimiseQuadrilateralSet"
+	it "imports optimiseLayer", -> expect(index.optimiseLayer).toBe require "./optimiseLayer"
+	it "imports optimiseTerrain", -> expect(index.optimiseTerrain).toBe require "./optimiseTerrain"

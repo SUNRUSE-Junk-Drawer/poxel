@@ -12,3 +12,6 @@ module.exports =
 	add: require "./add"
 	blockOnSurface: require "./blockOnSurface"
 	blockInSurface: require "./blockInSurface"
+	optimiseQuadrilateralSet: require "./optimiseQuadrilateralSet"
+	optimiseLayer: require "./optimiseLayer"
+	optimiseTerrain: require "./optimiseTerrain"
