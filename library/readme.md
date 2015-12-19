@@ -66,7 +66,7 @@ Given:
 
 Returns truthy when any quadrilateral described in the layer covers the specified location.
 
-### materialConveringInLayer
+### materialCoveringInLayer
 
 Given:
 
