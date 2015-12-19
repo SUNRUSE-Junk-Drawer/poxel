@@ -16,3 +16,4 @@ describe "index", ->
 	it "imports optimiseQuadrilateralSet", -> expect(index.optimiseQuadrilateralSet).toBe require "./optimiseQuadrilateralSet"
 	it "imports optimiseLayer", -> expect(index.optimiseLayer).toBe require "./optimiseLayer"
 	it "imports optimiseTerrain", -> expect(index.optimiseTerrain).toBe require "./optimiseTerrain"
+	it "imports generateObj", -> expect(index.generateObj).toBe require "./generateObj"

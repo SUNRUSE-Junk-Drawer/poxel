@@ -15,3 +15,4 @@ module.exports =
 	optimiseQuadrilateralSet: require "./optimiseQuadrilateralSet"
 	optimiseLayer: require "./optimiseLayer"
 	optimiseTerrain: require "./optimiseTerrain"
+	generateObj: require "./generateObj"
