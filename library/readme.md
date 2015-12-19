@@ -196,7 +196,7 @@ If:
 
 These are automatically defined.
 
-### optimise
+### optimise (currently unimplemented)
 
 Given:
 
