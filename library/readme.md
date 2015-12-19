@@ -232,11 +232,29 @@ If:
 
 These are automatically defined.
 
-### optimiseQuadrilateralSet
+### optimiseQuadrilateralSet (currently a no-op)
 
 Given:
 
 - A quadrilateral set.
+
+Modifies the quadrilateral arrays to merge any eligible quadrilaterals into fewer, larger quadrilaterals.
+Returns truthy if any changes were made, and falsy if not.
+
+### optimiseLayer (currently a no-op)
+
+Given:
+
+- A layer.
+
+Modifies the quadrilateral arrays to merge any eligible quadrilaterals into fewer, larger quadrilaterals.
+Returns truthy if any changes were made, and falsy if not.
+
+### optimiseTerrain (currently a no-op)
+
+Given:
+
+- A terrain object.
 
 Modifies the quadrilateral arrays to merge any eligible quadrilaterals into fewer, larger quadrilaterals.
 Returns truthy if any changes were made, and falsy if not.
