@@ -11,3 +11,4 @@ describe "index", ->
 	it "imports add", -> expect(index.add).toBe require "./add"
 	it "imports addBlock", -> expect(index.addBlock).toBe require "./addBlock"
 	it "imports subtractBlock", -> expect(index.subtractBlock).toBe require "./subtractBlock"
+	it "imports blockOnSurface", -> expect(index.blockOnSurface).toBe require "./blockOnSurface"

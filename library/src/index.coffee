@@ -10,3 +10,4 @@ module.exports =
 	addBlock: require "./addBlock"
 	subtractBlock: require "./subtractBlock"
 	add: require "./add"
+	blockOnSurface: require "./blockOnSurface"
