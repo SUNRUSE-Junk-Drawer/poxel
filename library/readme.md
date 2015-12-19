@@ -40,7 +40,7 @@ This defines:
  
 Please note that only the lower bound is inclusive, so [0, 1] fills the gap between 0 and 1.
 
-# Example (note; some functions in this example are not yet available)
+# Example
 
 	poxel = require("poxel");
 
@@ -131,7 +131,7 @@ Given:
 Returns truthy if any faces out of the specified block location.
 If so, it is valid to subtract a block.
 
-### generateObj (unimplemented)
+### generateObj
 
 Given a terrain, returns a string which is the content of a Wavefront OBJ file.
 This can be used to import the terrain into external applications.
