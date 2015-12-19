@@ -1,6 +1,6 @@
 {
   "name": "poxel",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Emulating voxel terrain using its bounding polygons.",
   "main": "dist/index.js",
   "files": [
@@ -34,7 +34,9 @@
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jasmine-nodejs": "^1.4.3",
-    "rewire": "^2.5.1"
+    "parse-obj": "0.0.0",
+    "rewire": "^2.5.1",
+    "string-to-stream": "^1.0.1"
   },
   "dependencies": {}
 }
