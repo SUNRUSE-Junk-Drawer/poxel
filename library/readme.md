@@ -44,24 +44,24 @@ Please note that only the lower bound is inclusive, so [0, 1] fills the gap betw
 
 	poxel = require("poxel");
 
-	var map = {}
+	var terrain = {}
 
-	poxel.addBlock(map, 0, 0, 0, "dirt");
-	poxel.addBlock(map, 1, 0, 0, "dirt");
-	poxel.addBlock(map, 0, 0, 1, "dirt");
-	poxel.addBlock(map, 1, 0, 1, "dirt");
-	poxel.addBlock(map, 1, 1, 1, "dirt");
-	poxel.addBlock(map, 1, 2, 1, "dirt");
-	poxel.addBlock(map, 1, 3, 1, "dirt");
-	poxel.addBlock(map, 2, 3, 1, "dirt");
-	poxel.addBlock(map, 3, 3, 1, "dirt");
-	poxel.addBlock(map, 4, 3, 1, "dirt");
-	poxel.addBlock(map, 4, 2, 1, "dirt");
-	poxel.addBlock(map, 4, 1, 1, "dirt");
-	poxel.addBlock(map, 4, 0, 1, "dirt");
-    poxel.subtractBlock(map, 0, 0, 0, "dirt");
-	poxel.optimiseTerrain(map);
-	console.log(poxel.generateObj(map));
+	poxel.addBlock(terrain, 0, 0, 0, "dirt");
+	poxel.addBlock(terrain, 1, 0, 0, "dirt");
+	poxel.addBlock(terrain, 0, 0, 1, "dirt");
+	poxel.addBlock(terrain, 1, 0, 1, "dirt");
+	poxel.addBlock(terrain, 1, 1, 1, "dirt");
+	poxel.addBlock(terrain, 1, 2, 1, "dirt");
+	poxel.addBlock(terrain, 1, 3, 1, "dirt");
+	poxel.addBlock(terrain, 2, 3, 1, "dirt");
+	poxel.addBlock(terrain, 3, 3, 1, "dirt");
+	poxel.addBlock(terrain, 4, 3, 1, "dirt");
+	poxel.addBlock(terrain, 4, 2, 1, "dirt");
+	poxel.addBlock(terrain, 4, 1, 1, "dirt");
+	poxel.addBlock(terrain, 4, 0, 1, "dirt");
+    poxel.subtractBlock(terrain, 0, 0, 0, "dirt");
+	poxel.optimiseTerrain(terrain);
+	console.log(poxel.generateObj(terrain));
 
 When imported into Blender, this shows the model:
 
