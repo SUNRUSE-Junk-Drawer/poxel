@@ -60,7 +60,7 @@ Please note that only the lower bound is inclusive, so [0, 1] fills the gap betw
 	poxel.addBlock(map, 4, 1, 1, "dirt");
 	poxel.addBlock(map, 4, 0, 1, "dirt");
     poxel.subtractBlock(map, 0, 0, 0, "dirt");
-	poxel.optimise(map);
+	poxel.optimiseTerrain(map);
 	console.log(poxel.generateObj(map));
 
 When imported into Blender, this shows the model:
