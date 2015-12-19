@@ -40,6 +40,37 @@ This defines:
  
 Please note that only the lower bound is inclusive, so [0, 1] fills the gap between 0 and 1.
 
+# Example
+
+	poxel = require("poxel");
+
+	var map = {}
+
+	poxel.addBlock(map, 0, 0, 0, "dirt");
+	poxel.addBlock(map, 1, 0, 0, "dirt");
+	poxel.addBlock(map, 0, 0, 1, "dirt");
+	poxel.addBlock(map, 1, 0, 1, "dirt");
+	poxel.addBlock(map, 1, 1, 1, "dirt");
+	poxel.addBlock(map, 1, 2, 1, "dirt");
+	poxel.addBlock(map, 1, 3, 1, "dirt");
+	poxel.addBlock(map, 2, 3, 1, "dirt");
+	poxel.addBlock(map, 3, 3, 1, "dirt");
+	poxel.addBlock(map, 4, 3, 1, "dirt");
+	poxel.addBlock(map, 4, 2, 1, "dirt");
+	poxel.addBlock(map, 4, 1, 1, "dirt");
+	poxel.addBlock(map, 4, 0, 1, "dirt");
+    poxel.subtractBlock(map, 0, 0, 0, "dirt");
+	poxel.optimise(map);
+	console.log(poxel.generateObj(map));
+
+When imported into Blender, this shows the model:
+
+![Textured model](docs/textured.png)
+
+Topology has also been optimised to merge repeated faces:
+
+![Topology of model](docs/topology.png)
+
 # Functions
 
 The export of this package is an object with the following functions as properties:
