@@ -1,1 +1,3 @@
-window.addEventListener "load", (require "./socket")
+window.addEventListener "load", ->
+	(require "./socket")()
+	(require "./canvasSize")()
