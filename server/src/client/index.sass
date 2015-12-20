@@ -1,0 +1,65 @@
+*
+	margin: 0
+	padding: 0
+	background: none
+	border: none
+	outline: none
+	font-size: inherit
+	font-family: inherit
+	line-height: inherit
+	font-weight: inherit
+	color: inherit
+	text-decoration: inherit
+	border-collapse: collapse
+	border-spacing: 0
+	pointer-events: none
+	user-select: none
+	cursor: default
+
+body
+	background: black
+	font-size: 2vmin
+	line-height: 5vmin
+	font-family: sans-serif
+	font-weight: normal
+	color: white
+
+body::after
+	content: ""
+	position: fixed
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	background: rgba(0, 0, 0, 0.5)
+	display: none
+	line-height: 100vh
+	text-align: center
+
+body:not([state="connected"])::after
+	display: block
+	pointer-events: auto
+
+body[state="loading"]::after
+	content: "Loading..."
+
+body[state="connecting"]::after
+	content: "Connecting..."
+
+body[state="failedToConnect"]::after
+	content: "Failed to connect.  Please ensure that the server is running.  Trying again soon."
+
+body[state="connectionTimeout"]::after
+	content: "The connection timed out.  Trying again soon."
+
+body[state="failedToReconnect"]::after
+	content: "Failed to reconnect.  Trying again soon."
+
+body[state="failedToReconnectPermanently"]::after
+	content: "Failed to reconnect.  Please refresh to try again."
+
+canvas
+	position: fixed
+	top: 0
+	left: 0
+	pointer-events: auto

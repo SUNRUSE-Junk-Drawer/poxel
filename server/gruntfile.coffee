@@ -6,6 +6,10 @@ module.exports = (grunt) ->
 			"grunt-contrib-coffee"
 			"grunt-jasmine-nodejs"
 			"grunt-contrib-watch"
+			"grunt-contrib-jade"
+			"grunt-contrib-sass"
+			"grunt-contrib-uglify"
+			"grunt-webpack"
 		]
 
 	grunt.initConfig
@@ -22,10 +26,36 @@ module.exports = (grunt) ->
 			dist: 
 				files: [
 						cwd: "build"
-						src: ["**/*.js", "!**/*.unit.js"]
+						src: ["**/*.js", "!**/*.unit.js", "!client/**/*.js", "client/index.min.js", "**/*.html", "**/*.css"]
 						dest: "dist"
 						expand: true
 				]
+		jade:
+			build:
+				files: [
+						cwd: "src"
+						src: ["**/*.jade"]
+						dest: "build"
+						expand: true
+						ext: ".html"
+				]
+		sass:
+			build:
+				options:
+					style: "compressed"
+					sourcemap: "none"
+				files:
+					"build/client/index.min.css": "src/client/index.sass"
+		webpack:
+			build:
+				entry: "./build/client/index.js"
+				output:
+					path: "build/client/"
+					filename: "index.packed.js"
+		uglify:
+			build:
+				files:
+					"build/client/index.min.js": "build/client/index.packed.js"
 		coffee:
 			build:
 				options:
@@ -54,4 +84,4 @@ module.exports = (grunt) ->
 
 	grunt.registerTask "test", ["preBuild", "jasmine_nodejs", "clean:build"]
 	grunt.registerTask "preBuild", ["clean:build", "coffee"]
-	grunt.registerTask "build", ["preBuild", "jasmine_nodejs", "clean:dist", "copy:dist", "clean:build"]
+	grunt.registerTask "build", ["preBuild", "jasmine_nodejs", "jade", "sass", "webpack", "uglify", "clean:dist", "copy:dist", "clean:build"]
