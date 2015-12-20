@@ -1,4 +1,5 @@
 window.addEventListener "load", ->
-	(require "./socket")()
 	(require "./canvasSize")()
+	(require "./canvasContext")()
 	(require "./canvasRenderLoop")()
+	(require "./socket")()

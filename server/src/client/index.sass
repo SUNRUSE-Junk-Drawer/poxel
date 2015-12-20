@@ -58,6 +58,9 @@ body[state="failedToReconnect"]::after
 body[state="failedToReconnectPermanently"]::after
 	content: "Failed to reconnect.  Please refresh to try again."
 
+body[state="noWebGl"]::after
+	content: "WebGL could not be initialized.  Please ensure that your browser is up-to-date, and that WebGL is enabled."
+
 canvas
 	position: fixed
 	top: 0
