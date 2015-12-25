@@ -1,0 +1,13 @@
+module.exports = 	
+	"87": "walkForward"
+	"38": "lookUp"
+	"83": "walkBack"
+	"40": "lookDown"
+	"65": "walkLeft"
+	"37": "turnLeft"
+	"68": "walkRight"
+	"39": "turnRight"
+	"16": "ascend"
+	"32": "ascend"
+	"17": "descend"
+	"67": "descend"

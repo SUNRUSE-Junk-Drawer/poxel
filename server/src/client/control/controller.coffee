@@ -1,0 +1,13 @@
+module.exports = 
+	walkLeft: 0
+	walkRight: 0
+	walkForwards: 0
+	walkBackwards: 0
+	ascend: 0
+	descend: 0
+	addBlock: 0
+	subtractBlock: 0
+	turnLeft: 0
+	turnRight: 0
+	lookUp: 0
+	lookDown: 0
