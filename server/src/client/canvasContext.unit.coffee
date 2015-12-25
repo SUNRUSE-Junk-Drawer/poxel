@@ -2,8 +2,12 @@ describe "canvasContext", ->
 	rewire = require "rewire"
 	canvasContext = undefined
 	beforeEach -> canvasContext = rewire "./canvasContext"
+
+	describe "imports", ->
+		it "setState", -> expect(canvasContext.__get__ "setState").toBe require "./setState"
+
 	describe "on calling", ->
-		bodyAttributes = document = canvas = window = undefined
+		setState = document = canvas = window = undefined
 		beforeEach ->
 			window = 
 				addEventListener: jasmine.createSpy "addEventListener"
@@ -11,18 +15,16 @@ describe "canvasContext", ->
 				innerHeight: 600
 			canvasContext.__set__ "window", window
 
+			setState = jasmine.createSpy "setState"
+			canvasContext.__set__ "setState", setState
+
 			canvas = 
 				getContext: jasmine.createSpy "getContext"
-
-			bodyAttributes = 
-				state: "loading"
 
 			document = 
 				getElementsByTagName: (name) -> switch name
 					when "canvas" then [canvas]
 					else []
-				body:
-					setAttribute: (key, value) -> bodyAttributes[key] = value
 			canvasContext.__set__ "document", document
 		describe "when no context is available", ->
 			it "attempts to get the context once", ->
@@ -33,7 +35,8 @@ describe "canvasContext", ->
 			it "updates the state", ->
 				try
 					canvasContext()
-				expect(bodyAttributes.state).toEqual "noWebGl"
+				expect(setState.calls.count()).toEqual 1
+				expect(setState).toHaveBeenCalledWith "noWebGl"
 			it "throws an exception", ->
 				expect(canvasContext).toThrowError "No WebGL context is available"
 		describe "when a context is available", ->
@@ -46,4 +49,4 @@ describe "canvasContext", ->
 			it "exports the context", ->
 				expect(canvasContext.instance).toEqual "test context"
 			it "does not update the state", ->
-				expect(bodyAttributes.state).toEqual "loading"
+				expect(setState).not.toHaveBeenCalled()

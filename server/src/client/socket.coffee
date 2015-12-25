@@ -1,10 +1,12 @@
+setState = require "./setState"
+
 module.exports = ->
-	document.body.setAttribute "state", "connecting"
+	setState "connecting"
 	rootSocket = io()
-	rootSocket.on "connect", -> document.body.setAttribute "state", "connected"
-	rootSocket.on "connect_error", -> document.body.setAttribute "state", "failedToConnect"
-	rootSocket.on "connect_timeout", -> document.body.setAttribute "state", "connectionTimeout"
-	rootSocket.on "reconnect", -> document.body.setAttribute "state", "connected"
-	rootSocket.on "reconnecting", -> document.body.setAttribute "state", "reconnecting"
-	rootSocket.on "reconnect_error", -> document.body.setAttribute "state", "failedToReconnect"
-	rootSocket.on "reconnect_failed", -> document.body.setAttribute "state", "failedToReconnectPermanently"
+	rootSocket.on "connect", -> setState "connected"
+	rootSocket.on "connect_error", -> setState "failedToConnect"
+	rootSocket.on "connect_timeout", -> setState "connectionTimeout"
+	rootSocket.on "reconnect", -> setState "connected"
+	rootSocket.on "reconnecting", -> setState "reconnecting"
+	rootSocket.on "reconnect_error", -> setState "failedToReconnect"
+	rootSocket.on "reconnect_failed", -> setState "failedToReconnectPermanently"

@@ -2,16 +2,18 @@ describe "socket", ->
 	rewire = require "rewire"
 	socket = undefined
 	beforeEach -> socket = rewire "./socket"
+
+	describe "imports", ->
+		it "setState", -> expect(socket.__get__ "setState").toBe require "./setState"
+
 	describe "on calling", ->
-		listens = bodyAttributes = io = rootSocket = document = undefined
+		listens = setState = io = rootSocket = undefined
 		beforeEach ->
 			bodyAttributes = 
 				state: "loading"
 
-			document = 
-				body:
-					setAttribute: (key, value) -> bodyAttributes[key] = value
-			socket.__set__ "document", document
+			setState = jasmine.createSpy "setState"
+			socket.__set__ "setState", setState
 			
 			rootSocket = 
 				on: jasmine.createSpy "on"
@@ -29,7 +31,8 @@ describe "socket", ->
 		it "creates a new socket", ->
 			expect(io.calls.count()).toEqual 1
 		it "sets the body state to \"connecting\"", ->
-			expect(bodyAttributes.state).toEqual "connecting"
+			expect(setState.calls.count()).toEqual 1
+			expect(setState).toHaveBeenCalledWith "connecting"
 		it "binds to the \"connect\" event of the socket", -> 
 			expect(rootSocket.on).toHaveBeenCalledWith "connect", jasmine.any Function
 		it "binds to the \"connect_error\" event of the socket", -> 
@@ -51,7 +54,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"connected\"", ->
-				expect(bodyAttributes.state).toEqual "connected"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "connected"
 		describe "when the \"connect_error\" event is raised", ->
 			beforeEach -> raiseEvent "connect_error"
 			it "does not create further sockets", ->
@@ -59,7 +63,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"failedToConnect\"", ->
-				expect(bodyAttributes.state).toEqual "failedToConnect"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "failedToConnect"
 		describe "when the \"connect_timeout\" event is raised", ->
 			beforeEach -> raiseEvent "connect_timeout"
 			it "does not create further sockets", ->
@@ -67,7 +72,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"connectionTimeout\"", ->
-				expect(bodyAttributes.state).toEqual "connectionTimeout"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "connectionTimeout"
 		describe "when the \"reconnect\" event is raised", ->
 			beforeEach -> raiseEvent "reconnect"
 			it "does not create further sockets", ->
@@ -75,7 +81,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"connected\"", ->
-				expect(bodyAttributes.state).toEqual "connected"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "connected"
 		describe "when the \"reconnecting\" event is raised", ->
 			beforeEach -> raiseEvent "reconnecting"
 			it "does not create further sockets", ->
@@ -83,7 +90,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"reconnecting\"", ->
-				expect(bodyAttributes.state).toEqual "reconnecting"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "reconnecting"
 		describe "when the \"reconnect_error\" event is raised", ->
 			beforeEach -> raiseEvent "reconnect_error"
 			it "does not create further sockets", ->
@@ -91,7 +99,8 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"failedToReconnect\"", ->
-				expect(bodyAttributes.state).toEqual "failedToReconnect"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "failedToReconnect"
 		describe "when the \"reconnect_failed\" event is raised", ->
 			beforeEach -> raiseEvent "reconnect_failed"
 			it "does not create further sockets", ->
@@ -99,4 +108,5 @@ describe "socket", ->
 			it "does not listen for further events", ->
 				expect(rootSocket.on.calls.count()).toEqual listens
 			it "sets the body state to \"failedToReconnectPermanently\"", ->
-				expect(bodyAttributes.state).toEqual "failedToReconnectPermanently"
+				expect(setState.calls.count()).toEqual 2
+				expect(setState).toHaveBeenCalledWith "failedToReconnectPermanently"
